@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDT实验 - 快速启动</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .info {
+            background: #f7f9fc;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            text-align: left;
+        }
+        .info h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        code {
+            background: #e1e4e8;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 信号检测论实验</h1>
+        <p>欢迎使用信号检测论(SDT)交互式实验系统！请选择以下方式之一开始实验。</p>
+
+        <a href="index.html" class="btn">直接开始实验</a>
+
+        <div class="info">
+            <h3>📋 运行方式说明</h3>
+            <p><strong>方法一（推荐）</strong>: 直接点击上方"直接开始实验"按钮，或直接在文件管理器中双击 <code>index.html</code></p>
+            <p><strong>方法二</strong>: 使用本地服务器（适合开发和调试）</p>
+            <pre style="background: #e1e4e8; padding: 1rem; border-radius: 5px; overflow-x: auto;"><code># Python 3
+python -m http.server 8000
+
+# 然后访问 http://localhost:8000</code></pre>
+        </div>
+
+        <div class="info">
+            <h3>🎯 实验内容</h3>
+            <p>在本实验中，你将扮演机场安检员，判断X光扫描图像中是否包含违禁品（刀具）。</p>
+            <p>系统将自动记录你的判断结果，并计算：</p>
+            <ul style="text-align: left;">
+                <li>✓ 击中率 (Hit Rate)</li>
+                <li>⚠️ 虚报率 (False Alarm Rate)</li>
+                <li>📊 敏感性 d'</li>
+                <li>⚖️ 判断标准 c</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
