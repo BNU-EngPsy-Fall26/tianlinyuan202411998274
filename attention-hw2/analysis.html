@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全班数据 · 效应分析与预测检验</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topnav" id="topnav"></header>
+<main class="wrap">
+  <div class="card">
+    <h1>全班数据（匿名实时）</h1>
+    <p class="muted">数据来自课程收数平台 <code>GET /api/hw2/data?project=78HV39</code>，被试自动匿名为 P01、P02……
+       本页只统计<b>每个条件 ≥ 10 试次</b>的完整记录；RT 取正确试次（150–3000ms）。<button class="btn btn-o btn-s" onclick="location.reload()">刷新</button></p>
+  </div>
+
+  <div class="card">
+    <h2>改进想法的理论坐标（SEEV 等模型的映射）</h2>
+    <table class="st">
+      <tr><th class="l">改进段</th><th class="l">操纵</th><th class="l">对应理论</th><th class="l">可检验预测</th></tr>
+      <tr><td class="l">Stroop 反转</td><td class="l">干扰维度从“字义”换成“颜色”</td><td class="l">自动性假说 + 维度重叠（Wickens）</td><td class="l">反转干扰 ≪ 原干扰（不对称）</td></tr>
+      <tr><td class="l">搜索·出现率</td><td class="l">目标 75% → 25%</td><td class="l">SEEV 期望因子 E + 价值 V</td><td class="l">低出现率漏报↑、RT↑</td></tr>
+      <tr><td class="l">Posner·长SOA</td><td class="l">SOA 150 → 800 ms</td><td class="l">IOR 时间进程 + SEEV：无线索无期望</td><td class="l">易化消失或反转</td></tr>
+    </table>
+  </div>
+
+  <div id="secs"><p class="muted">正在读取全班数据……</p></div>
+</main>
+<script src="js/lab.js"></script>
+<script src="js/analysis.js"></script>
+</body>
+</html>

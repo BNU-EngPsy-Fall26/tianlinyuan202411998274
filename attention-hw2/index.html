@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>注意实验：复现 + 改进 · 作业二</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topnav" id="topnav"></header>
+<main class="wrap">
+
+  <div class="card">
+    <h1>注意实验：复现 + 改进</h1>
+    <p class="muted">工程心理学 · 注意实验室 作业二 ｜ 项目码 <b style="font-family:var(--mono)">78HV39</b> ｜ 数据上传至课程收数平台，全班结果可在「全班数据」页查看</p>
+    <p>这里复现三个经典注意实验，并为每个实验加入一个有理论依据的<b>改进</b>。每个页面都分两段：第一段是复现，第二段是改进检验。
+       完成一个实验约 <b>5–9 分钟</b>，做完自动把你的数据上传（一行一个试次，只含按键、反应时、对错，不含任何身份信息）。</p>
+  </div>
+
+  <div class="card" id="nick-card">
+    <h2>① 先给自己起个昵称</h2>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <input class="inl" id="in-nick" placeholder="昵称或编号，如：小明 / P07" style="min-width:260px">
+      <button class="btn btn-p" id="btn-nick">保存昵称</button>
+    </div>
+    <p class="muted" style="margin-top:8px">请用昵称或编号，<b>不要填真实姓名和学号</b>（数据接口的要求）。昵称保存在本机浏览器里，之后每台设备只需填一次。</p>
+  </div>
+
+  <h2 style="color:var(--navy)">② 选一个实验开始</h2>
+  <div class="grid">
+
+    <div class="exp">
+      <h3>Stroop 色词任务<span class="tag">约 6 分钟</span></h3>
+      <div class="grow">
+        <p style="font-size:14px"><b>复现</b>（Stroop, 1935）：判断字的<b>颜色</b>，字义是干扰。预测：不一致 trials 更慢。</p>
+        <p style="font-size:14px"><b>改进</b>：把任务方向反转——按字<b>读</b>出什么按键，颜色成了干扰。依据<b>自动性假说 + 维度重叠理论</b>（阅读高度自动化、不可抑制），预测反转任务的干扰量明显<b>小于</b>命名颜色任务（干扰不对称）。</p>
+        <p class="muted" style="font-size:13px">按键：F = 红 ・ J = 绿</p>
+      </div>
+      <a class="btn btn-gold" href="stroop.html">开始 Stroop 实验 →</a>
+    </div>
+
+    <div class="exp">
+      <h3>视觉搜索<span class="tag">约 8 分钟</span></h3>
+      <div class="grow">
+        <p style="font-size:14px"><b>复现</b>（Treisman &amp; Souther, 1979；特征整合理论 FIT）：特征搜索（找 O）vs 联合搜索（找 红O），预测联合搜索显著更慢。</p>
+        <p style="font-size:14px"><b>改进</b>：操纵<b>目标出现率</b>（高 75% vs 低 25%，联合搜索）。依据 <b>SEEV 模型</b>的期望因子（Momentary Expectancy）与目标价值，预测低出现率下<b>漏报增多、反应变慢</b>——就像机场安检很少查到危险品时，检查员更容易漏。</p>
+        <p class="muted" style="font-size:13px">按键：空格 = 有目标 ・ K = 没有</p>
+      </div>
+      <a class="btn btn-gold" href="search.html">开始视觉搜索 →</a>
+    </div>
+
+    <div class="exp">
+      <h3>Posner 空间线索<span class="tag">约 5 分钟</span></h3>
+      <div class="grow">
+        <p style="font-size:14px"><b>复现</b>（Posner, 1980）：外周闪框线索（50% 有效），线索后 <b>150ms</b> 出现目标。预测：有效线索更快（注意定向易化）。</p>
+        <p style="font-size:14px"><b>改进</b>：把线索—目标间隔拉到 <b>800ms</b> 再测同一对比。依据<b>返回抑制（IOR）的时间进程理论</b>（Posner &amp; Cohen, 1984）与 SEEV 瞬时期望（线索无预测性时无法维持期望），预测长间隔下易化<b>消失甚至反转</b>。</p>
+        <p class="muted" style="font-size:13px">按键：F = 左框 ・ J = 右框</p>
+      </div>
+      <a class="btn btn-gold" href="posner.html">开始 Posner 实验 →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>③ 做完之后</h2>
+    <p>你会看到一个属于你自己的效果小结；全班聚合结果（匿名，P01、P02……）在
+      <a href="analysis.html"><b>全班数据</b></a> 页实时查看——柱状图、效应量、与原文献典型值的对照，以及每个改进预测是否成立。</p>
+    <p class="muted">隐私说明：数据只含按键反应时与对错；昵称会出现在你自己的下载 CSV 里，但在全班接口中自动匿名。设计细节、出处与预测见 <a href="README.md">README.md</a>。</p>
+  </div>
+
+</main>
+<script src="js/lab.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
