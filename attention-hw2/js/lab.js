@@ -113,6 +113,29 @@ async function runTrials(trials, cfg) {
   return recs;
 }
 
+/* 知情同意屏（slide 技术要求："先显示知情同意"）——勾选后才可进入 */
+function consentGate(expName, minutes) {
+  return new Promise(res => {
+    showScreen(`
+      <h2>知情同意书</h2>
+      <p><b>${expName}</b> 是课程演示实验（工程心理学 · 作业二），全过程约 <b>${minutes} 分钟</b>。</p>
+      <div class="note">
+        · <b>目的</b>：复现并改进一个经典注意实验；数据仅用于课程作业与课堂匿名分析。<br>
+        · <b>自愿</b>：参与完全自愿，随时关闭页面即可退出，没有任何后果。<br>
+        · <b>记录什么</b>：按键反应时、对错、刺激参数；姓名位置请填<b>匿名编号或昵称</b>，<b>不收集</b>真实姓名、学号（服务器另记录浏览器版本与屏幕分辨率用于数据质量检查）。<br>
+        · <b>谁能看到</b>：课程收数平台与作业作者；课堂展示界面中自动匿名（P01、P02…）。
+      </div>
+      <label style="display:flex;gap:10px;align-items:center;margin:14px 0;font-size:15px;cursor:pointer">
+        <input type="checkbox" id="agree" style="width:18px;height:18px"> 我已阅读以上内容，自愿参加本实验。
+      </label>
+      <button class="btn btn-p" id="enter-btn" disabled>同意并开始</button>
+      <p class="muted" style="margin-top:10px">不同意可直接关闭页面，或返回首页换别的实验。</p>`);
+    const chk = document.getElementById('agree'), btn = document.getElementById('enter-btn');
+    chk.onchange = () => { btn.disabled = !chk.checked; };
+    btn.onclick = () => { if (!btn.disabled) res(); };
+  });
+}
+
 /* 屏幕停留：按 Enter 或点按钮继续 */
 function waitEnter() {
   return new Promise(res => {

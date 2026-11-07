@@ -139,6 +139,7 @@ async function retryUpload(key) {
 (async function main() {
   requireNick();
   buildNav('search.html');
+  await consentGate('视觉搜索任务（复现 + 出现率改进）', 8);   // 知情同意先行
   order = pick(['AB', 'BA']);   // A=复现段 B=出现率改进段
   showScreen(`<h2>视觉搜索</h2>
     <p>你好，<b>${esc(getNick())}</b>！这个网页有两段搜索任务，一共约 8 分钟。</p>

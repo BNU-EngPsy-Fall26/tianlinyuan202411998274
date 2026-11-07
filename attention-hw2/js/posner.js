@@ -113,6 +113,7 @@ async function retryUpload(key) {
 (async function main() {
   requireNick();
   buildNav('posner.html');
+  await consentGate('Posner 空间线索任务（复现 + 时间进程改进）', 5);   // 知情同意先行
   order = pick(['AB', 'BA']);   // A=SOA150 复现 B=SOA800 改进
   showScreen(`<h2>Posner 空间线索任务</h2>
     <p>你好，<b>${esc(getNick())}</b>！这个网页考察“注意是如何被环境线索自动调动的”，两段共约 5 分钟。</p>

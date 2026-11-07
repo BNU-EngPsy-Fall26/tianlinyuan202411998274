@@ -108,6 +108,7 @@ async function retryUpload(key) {
 (async function main() {
   requireNick();
   buildNav('stroop.html');
+  await consentGate('Stroop 色词任务（复现 + 反转改进）', 6);   // 知情同意先行
   order = pick(['AB', 'BA']);   // A=命名颜色（复现）B=顺读汉字（改进），段序被试间平衡
   showScreen(`<h2>Stroop 色词任务</h2>
     <p>你好，<b>${esc(getNick())}</b>！这个网页有两个 Stroop 变体任务，一共约 6 分钟。</p>
